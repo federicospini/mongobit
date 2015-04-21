@@ -1,0 +1,21 @@
+{
+  "name": "btc.js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^0.9.0",
+    "cli-color": "^0.3.3",
+    "clui": "^0.3.1",
+    "ws": "^0.7.1"
+  }
+}
