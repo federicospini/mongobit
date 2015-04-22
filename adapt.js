@@ -1,4 +1,12 @@
 
+var remove_scriptSig_hex = function (vin) {
+  vin.scriptSig && delete vin.scriptSig.hex;
+};
+
+var remove_scriptPubKey_hex = function (vout) {
+  vout.scriptPubKey && delete vout.scriptPubKey.hex;
+};
+
 /**
  * adapt_block
  * It performs following transofmations:
@@ -28,10 +36,15 @@ var adapt_block = function (block) {
 
 var adapt_transactions = function (transactions) {
   transactions.forEach(function (transaction) {
-    transaction._id = transaction.txid;
+    var _id = transaction.txid || transaction._id;
     delete transaction.txid;
     delete transaction.confirmations;
     delete transaction.hex;
+    delete transaction.blockhash;
+    delete transaction.blocktime;
+    transaction.vin.forEach(remove_scriptSig_hex);
+    transaction.vout.forEach(remove_scriptPubKey_hex);
+    transaction._id = _id;
   });
 };
 
