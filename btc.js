@@ -8,7 +8,7 @@ var draw = require('./drawer.js');
 /**** EXPERIMENTS ****/
 
 function experiment01 (done) {
-  var blocks = utils.range(100000, 100001);
+  var blocks = utils.range(0,353191);
   var explored_blocks = 0;
   var Progress = clui.Progress;
   var bar = new Progress(100);
