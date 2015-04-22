@@ -10,8 +10,8 @@ var adapt = require('./adapt.js');
 var bar = new clui.Progress(100);
 
 var migration = function (done) {
-  var begin = 352000; 
-  var end = 352010;
+  var begin = 352110; 
+  var end = 352100;
   var start = Date.now();
   var blocks = utils.range(begin, end);
   var explored_blocks = 0;
@@ -24,7 +24,7 @@ var migration = function (done) {
         transactions_count += block.rawtx.length;
 
         // logging
-        draw(bar, explored_blocks++, blocks.length);
+        draw(bar, explored_blocks, blocks.length);
 
         // storaging
         adapt(block); // NB: has side effects on block and block.rawtx 
