@@ -22,10 +22,11 @@ function experiment01 (done) {
         //     console.log(err, transaction);
         //   });
         // });
+        console.log(util.inspect(block, { colors: true, depth: null, showHidden: false }));
         var transactions = block.rawtx;
         transactions_number += transactions.length;
         // transactions.forEach(function (transaction, transaction_counter) {
-          draw(bar, explored_blocks++, blocks.length);
+          // draw(bar, explored_blocks++, blocks.length);
           // console.log('// start transaction ' + transaction_counter + ' of block ' + i + ' - $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$');
           // console.log(Object.keys(transaction));
           // console.log(util.inspect(transaction, { colors: true, depth: null, showHidden: false }));

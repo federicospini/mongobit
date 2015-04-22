@@ -17,8 +17,8 @@ var drawer = require('./drawer.js');
 var cert = fs.readFileSync('./rpc-cvd01.cert');
 var user = "bitcoiner";
 var password = "VeryStr0ngP4ssw0rd";
-var address = 'wss://localhost:8334/ws'; // da remoto su CVD01
-// var address = 'wss://CVD01:8334/ws'; // da dentro il lab per CVD01
+var address = 'wss://localhost:8334/ws'; // da remoto su cvd0101 o su proprio su cvd01
+// var address = 'wss://cvd01:8334/ws'; // da dentro il lab per cvd01
 
 // to use the previous settings, issue:
 // $ ssh -L 8334:cvd01:8334 cvdlab@cvd.dia.uniroma3.it -N
@@ -40,7 +40,7 @@ var ws = new WebSocket(address, {
 
 function start (serial_experiments) {
   ws.on('open', function() {
-    async.waterfall(serial_experiments, function () {
+    async.series(serial_experiments, function () {
       console.log('done!');
       process.exit(0);
     });
