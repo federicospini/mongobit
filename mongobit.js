@@ -10,8 +10,8 @@ var adapt = require('./adapt.js');
 var bar = new clui.Progress(100);
 
 var migration = function (done) {
-  var begin = 352110; 
-  var end = 352100;
+  var begin = 352100; 
+  var end = 352120;
   var start = Date.now();
   var blocks = utils.range(begin, end);
   var explored_blocks = 0;

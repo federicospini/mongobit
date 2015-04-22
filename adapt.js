@@ -23,6 +23,7 @@ var adapt_block = function (block) {
  *   - adds an `_id` field containing `txid` of the block
  *   - for the sake of space, removes `txid` field
  *   - removes `confirmations` field from each transacion structure
+ *   - removes `hex` filed
  */
 
 var adapt_transactions = function (transactions) {
@@ -30,6 +31,7 @@ var adapt_transactions = function (transactions) {
     transaction._id = transaction.txid;
     delete transaction.txid;
     delete transaction.confirmations;
+    delete transaction.hex;
   });
 };
 
