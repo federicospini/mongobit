@@ -8,7 +8,7 @@ var draw = require('./drawer.js');
 /**** EXPERIMENTS ****/
 
 function experiment01 (done) {
-  var blocks = utils.range(0, 352963);
+  var blocks = utils.range(0, 200);
   var explored_blocks = 0;
   var Progress = clui.Progress;
   var bar = new Progress(100);
@@ -49,12 +49,12 @@ function experiment01 (done) {
       });
     });
   }, function () {
-    var iter = types.values();
-    var next = iter.next();
-    while (!next.done) {
-      console.log(next.value);
-      next = iter.next();
-    }
+    // var iter = types.values();
+    // var next = iter.next();
+    // while (!next.done) {
+    //   console.log(next.value);
+    //   next = iter.next();
+    // }
     // console.log('Found ' + types.size + ' transaction types');
     console.log('Found ' + transactions_number + ' transactions');
     setImmediate(done);
@@ -86,5 +86,5 @@ function experiment02 (done) {
 
 /**** MAIN ****/
 
-commands.start([experiment02]);
+commands.start([experiment01]);
 
