@@ -5,7 +5,7 @@ var Line = CLI.Line;
 var Progress = CLI.Progress;
 
 module.exports = function (bar, status, length) {
-  process.stdout.write('\n\n\n\n\n\033[8A');
+  process.stdout.write('\n\n\n\n\n\033[7A');
   var blankLine = new Line().fill().output();
 
   var websiteLine = new Line()
