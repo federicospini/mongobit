@@ -11,7 +11,7 @@ var bar = new clui.Progress(100);
 
 var migration = function (done) {
   var begin = 353245; 
-  var end = 353250;
+  var end = 353255;
   var start = Date.now();
   var blocks = utils.range(begin, end);
   var explored_blocks = 0;
@@ -28,7 +28,7 @@ var migration = function (done) {
 
         // storaging
         adapt(block); // NB: has side effects on block and block.rawtx 
-        db.save_block(block, next);
+        db.save_block_and_transactions(block, next);
       });
     });
   }, function () {

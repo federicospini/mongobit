@@ -12,9 +12,11 @@ var save_block = function (block, done) {
 };
 
 var save_block_and_transactions = function (block, done) {
+  var transactions = block.rawtx;
+  block.rawtx = transactions.map(function (t) { return t._id; });
   async.series([
     partial(save_block, block),
-    partial(async.eachSeries, block.rawtx, save_transaction)
+    partial(save_transaction, transactions)
   ], done);
 };
 

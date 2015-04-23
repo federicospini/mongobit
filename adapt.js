@@ -40,8 +40,8 @@ var adapt_transactions = function (transactions) {
     delete transaction.txid;
     delete transaction.confirmations;
     delete transaction.hex;
-    delete transaction.blockhash;
-    delete transaction.blocktime;
+    // delete transaction.blockhash;
+    // delete transaction.blocktime;
     transaction.vin.forEach(remove_scriptSig_hex);
     transaction.vout.forEach(remove_scriptPubKey_hex);
     transaction._id = _id;
